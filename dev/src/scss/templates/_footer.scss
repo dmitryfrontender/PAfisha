@@ -1,0 +1,82 @@
+// @import 'reset';
+// @import 'media';
+// @import 'global';
+// @import 'icons';
+
+// @import 'includes/plugins';
+//
+
+.footer {
+	background-color: #1C1C20;
+	height: 1px;
+    display: table-row;
+}
+
+.footer-holder {
+	padding: 50px 0;
+	text-align: center;
+
+	@media(max-width: 910px){
+		padding-bottom: 110px;
+	}
+
+	.logo-holder {
+		margin-bottom: 30px;
+
+		@media(max-width: 380px){
+			.logo {
+				img {
+					width: 270px;
+				}
+			}
+		}
+	}
+}
+
+.footer-nav {
+	margin: 0 -35px 30px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+
+	@media(max-width: 768px){
+		margin: 0 -15px 30px;
+	}
+
+	@media(max-width: 550px){
+		flex-direction: column;
+		margin: 0 0 30px;
+	}
+
+	.item {
+		margin: 0 35px;
+
+		@media(max-width: 768px){
+			margin: 0 15px;
+		}
+
+		@media(max-width: 550px){
+			margin: 0 0 20px 0;
+
+			&:last-child {
+				margin: 0;
+			}
+		}
+	}
+
+	.link {
+		font-size: 18px;
+		transition: color .3s;
+
+		@media(hover: hover) and (pointer: fine){
+			&:hover{
+				color: #FDB713;
+			}
+		}
+	}
+}
+
+.footer-text {
+	font-size: 12px;
+	line-height: 1.5;
+}

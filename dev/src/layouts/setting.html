@@ -1,0 +1,320 @@
+{{> header pageTitle="Setting"}}
+
+<div class="section-setting">
+	<div class="headline">
+		<h1 class="title">Настройки профиля</h1>
+	</div>
+
+	<div class="tabs-setting">
+		<div class="tabs-caption">
+			<div class="tab-btn active">
+				<svg class="svg-icon user"><use xlink:href='#icon-user-login'/></svg>
+				<div class="name">Основные</div>
+			</div>
+			<div class="tab-btn">
+				<svg class="svg-icon"><use xlink:href='#icon-security-lock'/></svg>
+				<div class="name">Безопасность</div>
+			</div>
+		</div>
+		<div class="tabs-content active">
+			<div class="inner">
+				<div class="title-name">ЛИЧНЫЕ ДАННЫЕ</div>
+				<form action="#" class="form-group">
+					<div class="row">
+						<label for="nickname" class="label">Никнейм</label>
+						<div class="wrap-input">
+				       		<input id="nickname" type="text" placeholder="Логин" class="input">
+				       </div>
+					</div>
+					<div class="row">
+						<div class="cols-2">
+							<div class="column">
+								<label for="gender" class="label">Пол</label>
+								<select id="gender" class="selectbox" style="width: 100%;" data-placeholder="Пол">
+									<option value=""></option>
+									<option value="BER">Мужской</option>
+									<option value="MAD">Женский</option>
+									<option value="LIS">Пара</option>
+								</select>
+							</div>
+							<div class="column">
+								<label for="height" class="label">Рост</label>
+								<div class="wrap-input">
+						       		<input id="height" type="number" placeholder="Укажите рост" class="input">
+						       </div>
+							</div>
+						</div>
+					</div>
+
+					<div class="row">
+						<div class="cols-3">
+							<div class="column">
+								<label class="label">День рождения</label>
+								<select class="selectbox" style="width: 100%;" data-placeholder="Число">
+									<option value=""></option>
+									<option value="BER">1</option>
+									<option value="MAD">2</option>
+									<option value="LIS">3</option>
+								</select>
+							</div>
+							<div class="column">
+								<select class="selectbox" style="width: 100%;" data-placeholder="Месяц">
+									<option value=""></option>
+									<option value="BER">Январь</option>
+									<option value="MAD">Февраль</option>
+									<option value="LIS">Март</option>
+								</select>
+							</div>
+							<div class="column">
+								<select class="selectbox" style="width: 100%;" data-placeholder="Год">
+									<option value=""></option>
+									<option value="BER">1982</option>
+									<option value="MAD">1983</option>
+									<option value="LIS">1984</option>
+								</select>
+							</div>
+						</div>
+					</div>
+
+					<div class="row">
+						<label for="country-id" class="label">Страна</label>
+						<select class="selectbox" id="country-id" style="width: 100%;">
+							<option value="" data-img="images/flags/world.svg">Страна</option>
+							<option value="DE" data-img="images/flags/de.jpg"> Германия</option>
+							<option value="ES" data-img="images/flags/es.jpg">Испания</option>
+							<option value="PT" data-img="images/flags/pt.jpg">Португалия</option>
+							<option value="US" data-img="images/flags/us.jpg">США</option>
+							<option value="DE" data-img="images/flags/de.jpg">Германия</option>
+							<option value="ES" data-img="images/flags/es.jpg">Испания</option>
+							<option value="PT" data-img="images/flags/pt.jpg">Португалия</option>
+							<option value="US" data-img="images/flags/us.jpg">США</option>
+							<option value="DE" data-img="images/flags/de.jpg">Германия</option>
+						</select>
+					</div>
+
+					<div class="row">
+						<label class="label">Ориентация</label>
+						<select class="selectbox" style="width: 100%;" data-placeholder="Выбрать">
+							<option value=""></option>
+							<option value="BER">1</option>
+							<option value="MAD">2</option>
+							<option value="LIS">3</option>
+						</select>
+					</div>
+
+					<div class="row">
+						<label for="profession" class="label">Профессия</label>
+						<div class="wrap-input">
+				       		<input id="profession" type="input" placeholder="Укажите свою профессию" class="input">
+				       </div>
+					</div>
+
+					<div class="row">
+						<label class="label">Образрование</label>
+						<select class="selectbox" style="width: 100%;" data-placeholder="Выберите образование">
+							<option value=""></option>
+							<option value="BER">1</option>
+							<option value="MAD">2</option>
+							<option value="LIS">3</option>
+						</select>
+					</div>
+
+					<div class="row">
+						<label for="about" class="label">Обо мне</label>
+						<textarea id="about" class="textarea" placeholder="Расскажите о себе"></textarea>
+					</div>
+
+					<div class="row">
+						<label for="room" class="label">Я на Secret Room</label>
+						<div class="wrap-input">
+				       		<input id="room" type="input" placeholder="Ссылка" class="input">
+				       </div>
+					</div>
+
+					<label class="label">Категории по душе</label>
+					<div class="wrap-category-search">
+						<div class="inner-block">
+							<div class="wrap-input">
+								<input type="text" placeholder="Категории" class="input search-input">
+								<button class="search-button">
+									<svg class="svg-icon"><use xlink:href="#icon-search"></use></svg>
+								</button>
+							</div>
+							<ul class="list-links">
+								<li class="item">
+									<a href="#" class="link">
+										<span class="text">Большие члены</span>
+										<span class="wrap-svg">
+											<svg class="svg-icon"><use xlink:href='#icon-plus'/></svg>
+										</span>
+									</a>
+								</li>
+								<li class="item">
+									<a href="#" class="link">
+										<span class="text">Большие жопы</span>
+										<span class="wrap-svg">
+											<svg class="svg-icon"><use xlink:href='#icon-plus'/></svg>
+										</span>
+									</a>
+								</li>
+								<li class="item">
+									<a href="#" class="link">
+										<span class="text">Большие сиськи</span>
+										<span class="wrap-svg">
+											<svg class="svg-icon"><use xlink:href='#icon-plus'/></svg>
+										</span>
+									</a>
+								</li>
+								<li class="item">
+									<a href="#" class="link">
+										<span class="text">Большие члены</span>
+										<span class="wrap-svg">
+											<svg class="svg-icon"><use xlink:href='#icon-plus'/></svg>
+										</span>
+									</a>
+								</li>
+							</ul>
+						</div>
+						<ul class="list-links second">
+							<li class="item">
+								<a href="#" class="link">
+									<span class="text">На кухне</span>
+									<span class="wrap-svg">
+										<svg class="svg-icon"><use xlink:href='#icon-plus'/></svg>
+									</span>
+								</a>
+							</li>
+							<li class="item">
+								<a href="#" class="link">
+									<span class="text">Минет</span>
+									<span class="wrap-svg">
+										<svg class="svg-icon"><use xlink:href='#icon-plus'/></svg>
+									</span>
+								</a>
+							</li>
+							<li class="item">
+								<a href="#" class="link">
+									<span class="text">Чулки</span>
+									<span class="wrap-svg">
+										<svg class="svg-icon"><use xlink:href='#icon-plus'/></svg>
+									</span>
+								</a>
+							</li>
+							<li class="item">
+								<a href="#" class="link">
+									<span class="text">Упругие сиськи</span>
+									<span class="wrap-svg">
+										<svg class="svg-icon"><use xlink:href='#icon-plus'/></svg>
+									</span>
+								</a>
+							</li>
+						</ul>
+					</div>
+					<div class="wrap-submit-custom">
+						<button type="submit" class="btn-primary">Сохранить изменения</button>
+					</div>
+				</form>
+			</div>
+		</div>
+		<div class="tabs-content">
+			<div class="inner">
+				<form action="#" class="form-group">
+					<div class="line-box">
+						<div class="title-name">СМЕНИТЬ ПАРОЛЬ</div>
+						<div class="row">
+							<label for="pass" class="label">Действующий</label>
+							<div class="wrap-input input-pass">
+					       		<input id="pass" type="password" placeholder="Пароль" class="input">
+					       		<button type="button" class="btn-view">
+					       			<svg class="svg-icon icon-non-eye"><use xlink:href="#icon-no-view"></use></svg>
+					       		</button>
+					       </div>
+						</div>
+						<div class="row">
+							<label for="pass_new" class="label">Новый</label>
+							<div class="wrap-input input-pass">
+					       		<input id="pass_new" type="password" placeholder="Не менее 5 символов" class="input">
+					       		<button type="button" class="btn-view">
+					       			<svg class="svg-icon icon-non-eye"><use xlink:href="#icon-no-view"></use></svg>
+					       		</button>
+					       </div>
+						</div>
+						<div class="row">
+							<label for="pass_repeat" class="label">Повторите новый пароль</label>
+							<div class="wrap-input input-pass">
+					       		<input id="pass_repeat" type="password" class="input">
+					       		<button type="button" class="btn-view">
+					       			<svg class="svg-icon icon-non-eye"><use xlink:href="#icon-no-view"></use></svg>
+					       		</button>
+					       </div>
+						</div>
+						<div class="pass-submit">
+							<button type="submit" class="btn-primary">Сохранить изменения</button>
+						</div>
+					</div>
+					<div class="line-box">
+						<div class="title-name">СМЕНИТЬ E-MAIL</div>
+						<div class="row">
+							<label for="email" class="label">Новый e-mail</label>
+							<div class="wrap-input">
+					       		<input id="email" type="input" placeholder="Введите e-mail " class="input">
+					       </div>
+						</div>
+						<div class="row">
+							<label for="pass_new2" class="label">Новый пароль</label>
+							<div class="wrap-input input-pass">
+					       		<input id="pass_new2" type="password" class="input">
+					       		<button type="button" class="btn-view">
+					       			<svg class="svg-icon icon-non-eye"><use xlink:href="#icon-no-view"></use></svg>
+					       		</button>
+					       </div>
+						</div>
+						<div class="pass-submit second">
+							<button type="submit" class="btn-primary">Сохранить изменения</button>
+						</div>
+					</div>
+					<div class="line-box">
+						<div class="title-name">КОНФИДЕНЦИАЛЬНОСТЬ</div>
+						<label class="wrap-checkbox">Разрешить писать только друзьям 
+							<input type="checkbox" checked>
+							<span class="checkmark"></span>
+						</label>
+						<label class="wrap-checkbox">Разрешить писать личные сообщения только Premium пользователям 
+							<input type="checkbox" checked>
+							<span class="checkmark"></span>
+						</label>
+						<label class="wrap-checkbox">Скрыть все комментарии и запретить комментирование 
+							<input type="checkbox" checked>
+							<span class="checkmark"></span>
+						</label>
+					</div>
+					<div class="line-box">
+						<div class="title-name delete-title">УДАЛИТЬ АНКЕТУ</div>
+						<label class="wrap-checkbox">Удалить мой аккаунт и все мои данные навсегда, без возможности восстановления 
+							<input type="checkbox">
+							<span class="checkmark"></span>
+						</label>
+						<div class="row">
+							<label for="about2" class="label">Расскажиете причину</label>
+							<textarea id="about2" class="textarea"></textarea>
+						</div>
+						<div class="row">
+							<label for="pass3" class="label">Пароль</label>
+							<div class="wrap-input input-pass">
+					       		<input id="pass3" type="password" class="input">
+					       		<button type="button" class="btn-view">
+					       			<svg class="svg-icon icon-non-eye"><use xlink:href="#icon-no-view"></use></svg>
+					       		</button>
+					       </div>
+						</div>
+						<div class="pass-submit second">
+							<button type="submit" class="btn-primary">Удалить</button>
+						</div>
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
+</div>
+
+{{> footer}}

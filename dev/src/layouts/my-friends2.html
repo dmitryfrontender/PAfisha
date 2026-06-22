@@ -1,0 +1,134 @@
+{{> header pageTitle="My friends 2"}}
+
+<div class="main-holder">
+	<div class="content content-thumbs-col3">
+		<div class="top-block-friends sliderbar">
+			<div class="wrap">
+				<div class="headline">
+					<h1 class="title">мои друзья</h1>
+				</div>
+				<div class="buttons-friends">
+					<div class="column-left">
+						<a href="#" class="btn active">
+							<span class="text">Все</span>
+							<span class="value">290</span>
+						</a>
+						<a href="#" class="btn">
+							<span class="text">Онлайн</span>
+							<span class="value">94</span>
+						</a>
+					</div>
+					<div class="column-right">
+						<div class="wrap-dropdown desktop-hide">
+							<button type="button" class="btn js-dropdown">
+								<span class="text">Ещё
+									<span class="value is-plus">+12</span>
+								</span>
+								<svg class="svg-icon"><use xlink:href='#icon-arrow-down'/></svg>
+							</button>
+							<ul class="dropdown">
+								<li class="item">
+									<a href="#" class="btn">
+										<span class="text">Заявки</span>
+										<span class="value is-plus">+12</span>
+									</a>
+								</li>
+								<li class="item">
+									<a href="#" class="btn">
+										<span class="text">Заблокированные</span>
+										<span class="value">9</span>
+									</a>
+								</li>
+							</ul>
+						</div>
+						<a href="#" class="btn mobile-hide">
+							<span class="text">Заявки</span>
+							<span class="value is-plus">+12</span>
+						</a>
+						<a href="#" class="btn mobile-hide">
+							<span class="text">Заблокированные</span>
+							<span class="value">9</span>
+						</a>
+					</div>
+				</div>
+
+				<form action="#" class="form-group">
+					<div class="wrap-input">
+			       		<input type="text" placeholder="Поиск по никнейму" class="input search-input">
+			       		<button class="search-button">
+							<svg class="svg-icon"><use xlink:href="#icon-search"></use></svg>
+						</button>
+						<div class="wrap-dropdown wrap-filter">
+							<button type="button" class="btn-filter-search js-dropdown">
+								<svg class="svg-icon"><use xlink:href="#icon-settings"></use></svg>
+							</button>
+
+							<div class="dropdown">
+								<div class="row line">
+									<select class="selectbox" id="country-id" style="width: 100%;">
+										<option value="" data-img="images/flags/world.svg">Страна</option>
+										<option value="DE" data-img="images/flags/de.jpg"> Германия</option>
+										<option value="ES" data-img="images/flags/es.jpg">Испания</option>
+										<option value="PT" data-img="images/flags/pt.jpg">Португалия</option>
+										<option value="US" data-img="images/flags/us.jpg">США</option>
+										<option value="DE" data-img="images/flags/de.jpg">Германия</option>
+										<option value="ES" data-img="images/flags/es.jpg">Испания</option>
+										<option value="PT" data-img="images/flags/pt.jpg">Португалия</option>
+										<option value="US" data-img="images/flags/us.jpg">США</option>
+										<option value="DE" data-img="images/flags/de.jpg">Германия</option>
+									</select>
+								</div>
+								<div class="row line">
+									<div class="label-name">Показать</div>
+									<div class="radio-box">
+										<label class="wrap-radio">
+											<input type="radio" name="radio">
+											<span class="checkmark">
+												<svg class="svg-icon icon"><use xlink:href="#icon-male"></use></svg>
+												<span class="text">М</span>
+											</span>
+										</label>
+										<label class="wrap-radio">
+											<input type="radio" checked="checked" name="radio">
+											<span class="checkmark">
+												<svg class="svg-icon icon female"><use xlink:href="#icon-female"></use></svg>
+												<span class="text">Ж</span>
+											</span>
+										</label>
+										<label class="wrap-radio">
+											<input type="radio" name="radio">
+											<span class="checkmark">
+												<svg class="svg-icon icon other"><use xlink:href="#icon-other"></use></svg>
+												<span class="text" style="font-size: 16px;">2</span>
+											</span>
+										</label>
+									</div>
+								</div>
+								<div class="row">
+									<div class="label-name">Возраст</div>
+									<div class="range-slider-holder">
+					    				<div class="inform-holder">
+					    					<div class="inform-item">
+					    						<input type="text" class="number js-from">
+					    					</div>
+					    					-
+					    					<div class="inform-item">
+					    						<input type="text" class="number js-to">
+					    					</div>
+					    				</div>
+					    				<input type="text" class="js-range-slider">
+					    			</div>
+								</div>
+							</div>
+						</div>
+			       	</div>
+				</form>
+			</div>
+		</div>
+
+		{{> thumbs-vertical-col3-friends2}}
+
+	</div>
+</div>
+
+{{> footer}}
