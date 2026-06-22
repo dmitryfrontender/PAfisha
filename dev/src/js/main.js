@@ -23,7 +23,7 @@ window.addEventListener("DOMContentLoaded", function () {
   initMasonry();
   initTabsProfile();
   startCountdown();
-  initMyProfileVideoSteps();
+  // initMyProfileVideoSteps();
 });
 
 function initBurgerMenu() {
