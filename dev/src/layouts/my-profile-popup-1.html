@@ -512,19 +512,23 @@
 </div>
 
 <!-- Upload Video Popup -->
-<div class="my-profile-popup">
+<div class="my-profile-popup-1 open">
   <div class="popup-backdrop"></div>
   <div class="popup-container">
     <div class="popup-header">
       <div class="upload-icon upload-svg">
-        <svg class="svg-icon"><use xlink:href="#icon-upload"></use></svg>
+        <svg class="svg-icon">
+          <use xlink:href="#icon-upload"></use>
+        </svg>
       </div>
       <div class="header-text">
         <h3>Загрузка видео</h3>
         <p>Выберите видео для вашей новой публикации</p>
       </div>
-      <button>
-        <svg class="svg-icon close-btn"><use xlink:href="#icon-close"></use></svg>
+      <button class="close-btn">
+        <svg class="svg-icon">
+          <use xlink:href="#icon-close"></use>
+        </svg>
       </button>
     </div>
 
@@ -532,14 +536,17 @@
       <div class="popup-step is-active" data-step="1">
 
         <div class="upload-rules">
-          <p>Загружайте только те видео, которые вы сделали сами, или имеете право использовать. Запрещено размещение контента с участием лиц не достигших совершеннолетия.</p>
+          <p>Загружайте только те видео, которые вы сделали сами, или имеете право использовать. Запрещено размещение
+            контента с участием лиц не достигших совершеннолетия.</p>
           <p>Любые видео могут быть удалены администрацией сайта без оповещения.</p>
         </div>
 
         <div class="upload-area">
           <button class="upload-btn">
             <div class="upload-icon">
-              <svg class="svg-icon"><use xlink:href="#icon-upload"></use></svg>
+              <svg class="svg-icon">
+                <use xlink:href="#icon-upload"></use>
+              </svg>
             </div>
             <span>Загрузить</span>
           </button>
@@ -562,7 +569,7 @@
                 </div>
                 <button class="delete-btn">
                   <svg class='svg-icon'>
-                      <use xlink:href='#icon-delete'/>
+                    <use xlink:href='#icon-delete' />
                   </svg>
                 </button>
               </div>
@@ -572,7 +579,7 @@
                   <span class="separator"></span>
                   <div class="status completed">
                     <svg class='svg-icon'>
-                        <use xlink:href='#icon-checked2'/>
+                      <use xlink:href='#icon-checked2' />
                     </svg>
                     <span>Готово</span>
                   </div>
@@ -596,7 +603,7 @@
                 </div>
                 <button class="close-btn">
                   <svg class='svg-icon'>
-                      <use xlink:href='#icon-close'/>
+                    <use xlink:href='#icon-close' />
                   </svg>
                 </button>
               </div>
@@ -606,15 +613,15 @@
                   <span class="separator"></span>
                   <div class="status uploading">
                     <svg class='svg-icon'>
-                        <use xlink:href='#icon-loading-bold'/>
+                      <use xlink:href='#icon-loading-bold' />
                     </svg>
                     <span>Загрузка...</span>
                   </div>
                 </div>
-                    <div class="progress-bar">
-                      <div class="progress-fill" style="width: 75%; max-width: calc(100% - 60px);"></div>
-                      <span class="progress-percent">75%</span>
-                    </div>
+                <div class="progress-bar">
+                  <div class="progress-fill" style="width: 75%; max-width: calc(100% - 60px);"></div>
+                  <span class="progress-percent">75%</span>
+                </div>
               </div>
             </div>
           </div>
@@ -624,71 +631,83 @@
       </div>
 
       <div class="popup-step" data-step="2">
-
         <div class="cover-selector">
-
           <div class="cover-selector__title">
             Выберите обложку из нарезанных кадров
           </div>
 
-          <div class="cover-selector__preview">
-            <img src="">
-          </div>
-
           <div class="cover-selector__frames">
-            ...
+            <div class="video-cover-container">
+              <div class="swiper main-preview">
+                <div class="swiper-wrapper">
+                  <div class="swiper-slide"><img src="images/dubai-1.png" alt="Preview 1"></div>
+                  <div class="swiper-slide"><img src="images/dubai-2.png" alt="Preview 2"></div>
+                  <div class="swiper-slide"><img src="images/dubai-1.png" alt="Preview 3"></div>
+                  <div class="swiper-slide"><img src="images/dubai-2.png" alt="Preview 4"></div>
+                  <div class="swiper-slide"><img src="images/dubai-1.png" alt="Preview 5"></div>
+                  <div class="swiper-slide"><img src="images/dubai-2.png" alt="Preview 6"></div>
+                  <div class="swiper-slide"><img src="images/dubai-1.png" alt="Preview 7"></div>
+                  <div class="swiper-slide"><img src="images/dubai-2.png" alt="Preview 8"></div>
+                  <div class="swiper-slide"><img src="images/dubai-1.png" alt="Preview 9"></div>
+                </div>
+              </div>
+
+              <div class="swiper thumbs-slider">
+                <div class="swiper-wrapper">
+                  <div class="swiper-slide"><img src="images/dubai-1.png" alt="Preview 1"></div>
+                  <div class="swiper-slide"><img src="images/dubai-2.png" alt="Preview 2"></div>
+                  <div class="swiper-slide"><img src="images/dubai-1.png" alt="Preview 3"></div>
+                  <div class="swiper-slide"><img src="images/dubai-2.png" alt="Preview 4"></div>
+                  <div class="swiper-slide"><img src="images/dubai-1.png" alt="Preview 5"></div>
+                  <div class="swiper-slide"><img src="images/dubai-2.png" alt="Preview 6"></div>
+                  <div class="swiper-slide"><img src="images/dubai-1.png" alt="Preview 7"></div>
+                  <div class="swiper-slide"><img src="images/dubai-2.png" alt="Preview 8"></div>
+                  <div class="swiper-slide"><img src="images/dubai-1.png" alt="Preview 9"></div>
+
+                  <div class="swiper-slide upload-btn-slide">
+                    <label class="upload-label">
+                      <input type="file" accept="image/*" style="display: none;">
+                      <span class="upload-content">
+                        <svg class="icon-upload" width="20" height="20" viewBox="0 0 24 24" fill="none"
+                          stroke="currentColor" stroke-width="2">
+                          <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4M17 8l-5-5-5 5M12 3v12" />
+                        </svg>
+                        <span class="upload-text">Загрузить свою обложку</span>
+                      </span>
+                    </label>
+                  </div>
+                </div>
+              </div>
+            </div>
+
           </div>
 
-          <div class="wizard-actions">
-
-            <button class="next-btn js-prev-step">
-              Назад
+          <div class="cover-selector__actions">
+            <button class="prev-btn js-prev-step">
+              <span>Назад</span>
             </button>
-
             <button class="next-btn js-next-step">
-              Далее
+              <span>Далее</span>
             </button>
-
           </div>
-
         </div>
-
       </div>
 
       <div class="popup-step" data-step="3">
 
         <div class="publish-form">
 
-          <input
-            type="text"
-            class="publish-input"
-            placeholder="Название видео"
-          >
+          <input type="text" class="publish-input" placeholder="Название видео">
 
-          <textarea
-            class="publish-textarea"
-            placeholder="Описание"
-          ></textarea>
+          <textarea class="publish-textarea" placeholder="Описание"></textarea>
 
-          <label class="premium-checkbox">
-
+          <label class="wrap-checkbox publish-checkbox">Только для Premium пользователей
             <input type="checkbox">
-
             <span class="checkmark"></span>
-
-            <span>
-              Только для Premium пользователей
-            </span>
-
           </label>
 
           <div class="wizard-actions">
-
-            <button class="next-btn js-prev-step">
-              Назад
-            </button>
-
-            <button class="publish-btn">
+            <button class="btn-primary publish-btn">
               Опубликовать
             </button>
 
@@ -698,7 +717,7 @@
 
       </div>
 
-  </div>
+    </div>
   </div>
 </div>
 
