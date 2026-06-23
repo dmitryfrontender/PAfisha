@@ -23,7 +23,9 @@ window.addEventListener("DOMContentLoaded", function () {
   initMasonry();
   initTabsProfile();
   startCountdown();
-  // initMyProfileVideoSteps();
+  initMyProfileVideoSteps();
+  initMyProfileBackgroundSteps();
+  initMyProfileAvatarSteps();
 });
 
 function initBurgerMenu() {
@@ -911,30 +913,27 @@ function startCountdown(minutes = 15) {
 }
 
 function initMyProfileVideoSteps() {
-  const publication = {
 
-    video: null,
+  const popupVideo = document.querySelector('.my-profile-popup-1');
 
-    cover: null,
+  if (!popupVideo) return;
 
-    title: '',
+  popupVideo.addEventListener('click', (e) => {
+    if (e.target.closest('.close-btn')) {
+      popupVideo.classList.remove('open');
+      document.body.classList.remove('no-scroll');
+    }
+  });
 
-    description: '',
-
-    premiumOnly: false
-  };
-
-  const steps = {
+  const wizardContent = {
     1: {
       title: 'Загрузка видео',
       subtitle: 'Выберите видео для вашей новой публикации'
     },
-
     2: {
       title: 'Загрузка видео',
       subtitle: 'Выбор обложки видео'
     },
-
     3: {
       title: 'Загрузка видео',
       subtitle: 'Укажите название и описание публикации'
@@ -943,16 +942,18 @@ function initMyProfileVideoSteps() {
 
   class UploadWizard {
 
-    constructor(selector) {
+    constructor() {
 
-      this.popup = document.querySelector(selector);
-
+      this.popup = popupVideo;
       this.currentStep = 1;
 
       this.steps = this.popup.querySelectorAll('.popup-step');
 
-      this.title = this.popup.querySelector('.header-text h3');
-      this.subtitle = this.popup.querySelector('.header-text p');
+      this.title =
+        this.popup.querySelector('.header-text h3');
+
+      this.subtitle =
+        this.popup.querySelector('.header-text p');
 
       this.render();
     }
@@ -963,39 +964,532 @@ function initMyProfileVideoSteps() {
         step.classList.remove('is-active');
       });
 
-      this.popup
-        .querySelector(`[data-step="${this.currentStep}"]`)
-        .classList.add('is-active');
+      const activeStep =
+        this.popup.querySelector(
+          `[data-step="${this.currentStep}"]`
+        );
+
+      activeStep?.classList.add('is-active');
 
       this.title.textContent =
-        wizardTitles[this.currentStep].title;
+        wizardContent[this.currentStep].title;
 
       this.subtitle.textContent =
-        wizardTitles[this.currentStep].subtitle;
+        wizardContent[this.currentStep].subtitle;
+
+      if (this.currentStep === 2) {
+        requestAnimationFrame(() => {
+          initCovers();
+          swiperThumbs?.update();
+          swiperMain?.update();
+        });
+      }
     }
 
     next() {
-
-      if (this.currentStep >= 3) {
-        return;
+      if (this.currentStep < 3) {
+        this.currentStep++;
+        this.render();
       }
-
-      this.currentStep++;
-
-      this.render();
     }
 
     prev() {
-
-      if (this.currentStep <= 1) {
-        return;
+      if (this.currentStep > 1) {
+        this.currentStep--;
+        this.render();
       }
-
-      this.currentStep--;
-
-      this.render();
     }
   }
 
-  const wizard = new UploadWizard('.my-profile-popup');
+  const wizard = new UploadWizard();
+
+  popupVideo.addEventListener('click', (e) => {
+
+    if (e.target.closest('.next-btn')) {
+      console.log('Wizard next');
+
+      wizard.next();
+    }
+
+    if (e.target.closest('.prev-btn')) {
+      console.log('Wizard prev');
+
+      wizard.prev();
+    }
+
+  });
+
+  const thumbsElement = document.querySelector('.thumbs-slider');
+  let swiperThumbs = null;
+  let swiperMain = null;
+
+  function initCovers() {
+    const isDesktop = window.innerWidth >= 768;
+
+    if (isDesktop) {
+      if (swiperMain && !swiperThumbs) {
+        swiperMain.destroy(true, true);
+        swiperMain = null;
+      }
+
+      if (!swiperThumbs) {
+        swiperThumbs = new Swiper('.thumbs-slider', {
+          slidesPerView: 5,
+          grid: {
+            rows: 2,
+            fill: 'row'
+          },
+          allowTouchMove: false,
+          watchSlidesProgress: true,
+        });
+
+        swiperMain = new Swiper('.main-preview', {
+          spaceBetween: 0,
+          allowTouchMove: false,
+          thumbs: {
+            swiper: swiperThumbs,
+          },
+        });
+      }
+
+      return;
+    }
+
+    if (swiperThumbs) {
+      swiperMain?.destroy(true, true);
+      swiperThumbs.destroy(true, true);
+      swiperThumbs = null;
+      swiperMain = null;
+    }
+
+    if (!swiperMain) {
+      swiperMain = new Swiper('.main-preview', {
+      });
+    }
+
+    initMobileClicks();
+  }
+
+  function initMobileClicks() {
+    document.querySelectorAll(
+      '.thumbs-slider .swiper-slide:not(.upload-btn-slide)'
+    );
+
+    if (!thumbs.length) return;
+
+    if (!document.querySelector('.thumbs-slider .swiper-slide-thumb-active')) {
+      thumbs[0].classList.add('swiper-slide-thumb-active');
+    }
+
+    thumbs.forEach((thumb, index) => {
+      thumb.onclick = () => {
+        thumbs.forEach(t => t.classList.remove('swiper-slide-thumb-active'));
+        thumb.classList.add('swiper-slide-thumb-active');
+
+        swiperMain?.slideTo(index);
+      };
+    });
+  }
+
+  window.addEventListener('resize', () => {
+    if (wizard.currentStep === 2) {
+      initCovers();
+      swiperThumbs?.update();
+      swiperMain?.update();
+    }
+  });
+}
+
+function initMyProfileBackgroundSteps() {
+
+  const popupBackground = document.querySelector('.my-profile-popup-2');
+
+  if (!popupBackground) return;
+
+  popupBackground.addEventListener('click', (e) => {
+    if (e.target.closest('.close-btn')) {
+      popupBackground.classList.remove('open');
+      document.body.classList.remove('no-scroll');
+    }
+  });
+
+  const wizardContent = {
+    1: {
+      title: 'Загрузка обложки',
+      subtitle: 'Выберите файл для вашей новой обложки'
+    },
+    2: {
+      title: 'Кадрування обложки',
+      subtitle: 'Выберите видимую область банера'
+    }
+  };
+
+  class UploadWizard {
+
+    constructor() {
+
+      this.popup = popupBackground;
+      this.currentStep = 1;
+
+      this.image = null;
+      this.cropper = null;
+
+      this.steps = this.popup.querySelectorAll('.popup-step');
+
+      this.title = this.popup.querySelector('.header-text h3');
+      this.subtitle = this.popup.querySelector('.header-text p');
+
+      this.imageEl = this.popup.querySelector('.preview-image');
+
+      this.render();
+    }
+
+    render() {
+
+      this.steps.forEach(step => {
+        step.classList.remove('is-active');
+      });
+
+      const activeStep =
+        this.popup.querySelector(`[data-step="${this.currentStep}"]`);
+
+      activeStep?.classList.add('is-active');
+
+      this.title.textContent = wizardContent[this.currentStep].title;
+      this.subtitle.textContent = wizardContent[this.currentStep].subtitle;
+
+      // STEP 2 → init cropper
+      if (this.currentStep === 2) {
+        this.initCropper();
+      }
+
+      // destroy cropper when leaving step 2
+      if (this.currentStep !== 2 && this.cropper) {
+        this.cropper.destroy();
+        this.cropper = null;
+      }
+    }
+
+    /**
+     * STEP 1 → load image
+     */
+    setImage(file) {
+
+      const reader = new FileReader();
+
+      reader.onload = (e) => {
+
+        this.image = e.target.result;
+
+        if (this.imageEl) {
+          this.imageEl.src = this.image;
+        }
+
+        this.next();
+      };
+
+      reader.readAsDataURL(file);
+    }
+
+    /**
+     * STEP 2 → Cropper.js init (CDN MODE)
+     */
+    initCropper() {
+
+  if (!this.imageEl || this.cropper) return;
+
+  const CropperCtor =
+    window.Cropper?.default || window.Cropper;
+
+  if (!CropperCtor) {
+    console.error('Cropper is not loaded properly', window.Cropper);
+    return;
+  }
+
+  this.cropper = new CropperCtor(this.imageEl, {
+    viewMode: 1,
+    dragMode: 'move',
+    aspectRatio: 3 / 1,
+    autoCropArea: 1,
+    cropBoxResizable: true,
+    cropBoxMovable: true,
+    guides: false,
+    background: false,
+    responsive: true
+  });
+}
+
+    /**
+     * FINAL RESULT (upload ready)
+     */
+    getCropData() {
+
+      if (!this.cropper) return null;
+
+      const canvas = this.cropper.getCroppedCanvas({
+        width: 1200,
+        height: 400
+      });
+
+      return {
+        image: canvas.toDataURL('image/jpeg', 0.9),
+        blob: this.dataURLtoBlob(canvas.toDataURL('image/jpeg', 0.9))
+      };
+    }
+
+    /**
+     * helper: base64 → blob
+     */
+    dataURLtoBlob(dataURL) {
+
+      const arr = dataURL.split(',');
+      const mime = arr[0].match(/:(.*?);/)[1];
+      const bstr = atob(arr[1]);
+
+      let n = bstr.length;
+      const u8arr = new Uint8Array(n);
+
+      while (n--) {
+        u8arr[n] = bstr.charCodeAt(n);
+      }
+
+      return new Blob([u8arr], { type: mime });
+    }
+
+    next() {
+      if (this.currentStep < 2) {
+        this.currentStep++;
+        this.render();
+      }
+    }
+
+    prev() {
+      if (this.currentStep > 1) {
+        this.currentStep--;
+        this.render();
+      }
+    }
+  }
+
+  const wizard = new UploadWizard();
+
+  popupBackground.addEventListener('click', (e) => {
+
+    // file upload
+    const fileInput = e.target.closest('input[type="file"]');
+
+    if (fileInput?.files?.length) {
+      wizard.setImage(fileInput.files[0]);
+    }
+
+    if (e.target.closest('.next-btn')) {
+      wizard.next();
+    }
+
+    if (e.target.closest('.prev-btn')) {
+      wizard.prev();
+    }
+
+    if (e.target.closest('.submit-btn')) {
+      console.log('CROP RESULT:', wizard.getCropData());
+    }
+
+  });
+}
+
+function initMyProfileAvatarSteps() {
+
+  const popupAvatar = document.querySelector('.my-profile-popup-3');
+
+  if (!popupAvatar) return;
+
+  popupAvatar.addEventListener('click', (e) => {
+    if (e.target.closest('.close-btn')) {
+      popupAvatar.classList.remove('open');
+      document.body.classList.remove('no-scroll');
+    }
+  });
+
+  const wizardContent = {
+    1: {
+      title: 'Загрузка нового аватара',
+      subtitle: 'Выберите файл для вашей новой аватарки'
+    },
+    2: {
+      title: 'Загрузка нового аватара',
+      subtitle: 'Выберите файл для вашей новой аватарки'
+    }
+  };
+
+  class UploadWizard {
+
+    constructor() {
+
+      this.popup = popupAvatar;
+      this.currentStep = 1;
+
+      this.image = null;
+      this.cropper = null;
+
+      this.steps = this.popup.querySelectorAll('.popup-step');
+
+      this.title = this.popup.querySelector('.header-text h3');
+      this.subtitle = this.popup.querySelector('.header-text p');
+
+      this.imageEl = this.popup.querySelector('.preview-image');
+
+      this.render();
+    }
+
+    render() {
+
+      this.steps.forEach(step => {
+        step.classList.remove('is-active');
+      });
+
+      const activeStep =
+        this.popup.querySelector(`[data-step="${this.currentStep}"]`);
+
+      activeStep?.classList.add('is-active');
+
+      this.title.textContent = wizardContent[this.currentStep].title;
+      this.subtitle.textContent = wizardContent[this.currentStep].subtitle;
+
+      // STEP 2 → init cropper
+      if (this.currentStep === 2) {
+        this.initCropper();
+      }
+
+      // destroy cropper when leaving step 2
+      if (this.currentStep !== 2 && this.cropper) {
+        this.cropper.destroy();
+        this.cropper = null;
+      }
+    }
+
+    /**
+     * STEP 1 → load image
+     */
+    setImage(file) {
+
+      const reader = new FileReader();
+
+      reader.onload = (e) => {
+
+        this.image = e.target.result;
+
+        if (this.imageEl) {
+          this.imageEl.src = this.image;
+        }
+
+        this.next();
+      };
+
+      reader.readAsDataURL(file);
+    }
+
+    /**
+     * STEP 2 → Cropper.js init (CDN MODE)
+     */
+    initCropper() {
+
+  if (!this.imageEl || this.cropper) return;
+
+  const CropperCtor =
+    window.Cropper?.default || window.Cropper;
+
+  if (!CropperCtor) {
+    console.error('Cropper is not loaded properly', window.Cropper);
+    return;
+  }
+
+  this.cropper = new CropperCtor(this.imageEl, {
+    viewMode: 1,
+    dragMode: 'move',
+    aspectRatio: 3 / 1,
+    autoCropArea: 1,
+    cropBoxResizable: true,
+    cropBoxMovable: true,
+    guides: false,
+    background: false,
+    responsive: true
+  });
+}
+
+    /**
+     * FINAL RESULT (upload ready)
+     */
+    getCropData() {
+
+      if (!this.cropper) return null;
+
+      const canvas = this.cropper.getCroppedCanvas({
+        width: 1200,
+        height: 400
+      });
+
+      return {
+        image: canvas.toDataURL('image/jpeg', 0.9),
+        blob: this.dataURLtoBlob(canvas.toDataURL('image/jpeg', 0.9))
+      };
+    }
+
+    /**
+     * helper: base64 → blob
+     */
+    dataURLtoBlob(dataURL) {
+
+      const arr = dataURL.split(',');
+      const mime = arr[0].match(/:(.*?);/)[1];
+      const bstr = atob(arr[1]);
+
+      let n = bstr.length;
+      const u8arr = new Uint8Array(n);
+
+      while (n--) {
+        u8arr[n] = bstr.charCodeAt(n);
+      }
+
+      return new Blob([u8arr], { type: mime });
+    }
+
+    next() {
+      if (this.currentStep < 2) {
+        this.currentStep++;
+        this.render();
+      }
+    }
+
+    prev() {
+      if (this.currentStep > 1) {
+        this.currentStep--;
+        this.render();
+      }
+    }
+  }
+
+  const wizard = new UploadWizard();
+
+  popupAvatar.addEventListener('click', (e) => {
+
+    // file upload
+    const fileInput = e.target.closest('input[type="file"]');
+
+    if (fileInput?.files?.length) {
+      wizard.setImage(fileInput.files[0]);
+    }
+
+    if (e.target.closest('.next-btn')) {
+      wizard.next();
+    }
+
+    if (e.target.closest('.prev-btn')) {
+      wizard.prev();
+    }
+
+    if (e.target.closest('.submit-btn')) {
+      console.log('CROP RESULT:', wizard.getCropData());
+    }
+
+  });
 }
