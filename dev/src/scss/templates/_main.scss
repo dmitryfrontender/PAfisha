@@ -4643,6 +4643,26 @@
 	background: #FFF;
 	color: #9BA5AE;
 
+	.section .headline {
+
+		.btn {
+			background: unset;
+
+			@media(hover: hover) and (pointer: fine){
+			&:hover{
+				background: rgb(246 179 22);
+			}
+		}
+		}
+
+		.sort .open {
+
+		}
+		.sort-item .active {
+			background-color: rgb(253, 183, 19);
+		}
+	}
+
 	.close-search {
 		color: unset;
 	}
@@ -4731,9 +4751,9 @@
 		}
 	}
 
-	.popup, .open {
-		background: rgba(18, 17, 20, 0.30);
-	}
+	// .popup, .open {
+	// 	background: rgba(18, 17, 20, 0.30);
+	// }
 
 	.inner-box {
 		background: linear-gradient(0deg, rgba(255, 255, 255, 0.05) 0%, rgba(255, 255, 255, 0.05) 100%), rgba(0, 0, 0, 0.35);
@@ -4888,6 +4908,43 @@
 
 	// VIDEO PREMIUM 
 
+	.block-video {
+
+		.tabs-menu {
+			.item-menu .active {
+				color: white;
+				background: #FDB713;
+
+			}
+
+			.item-menu .btn {
+				@media(hover: hover) and (pointer: fine){
+					&:hover{
+						color: white;
+						background: #FDB713;
+					}
+				}
+			}
+		}
+
+		.field-label {
+			color: #6F7173;
+		}
+
+		.row input {
+			border: 1px solid rgba(111, 113, 115, 0.15);
+			background: rgba(111, 113, 115, 0.05);
+		}
+
+		.social-list {
+			.link {
+				border: 1px solid rgba(111, 113, 115, 0.05);
+				background: rgba(111, 113, 115, 0.05);
+			}
+		}
+
+	}
+
 	.block-video-premium {
 		.right-column {
 			border: 1px solid rgba(56, 56, 56, 0.05);
@@ -4938,6 +4995,49 @@
 					color: #fff;
 				}
 			}
+		}
+
+		.inner-box {
+
+			border: 1px solid rgba(56, 56, 56, 0.05);
+			background: rgba(255, 255, 255, 0.80);
+			box-shadow: 0 100px 80px 0 rgba(0, 0, 0, 0.07), 0 41.778px 33.422px 0 rgba(0, 0, 0, 0.05), 0 22.336px 17.869px 0 rgba(0, 0, 0, 0.04), 0 12.522px 10.017px 0 rgba(0, 0, 0, 0.04), 0 6.65px 5.32px 0 rgba(0, 0, 0, 0.03), 0 2.767px 2.214px 0 rgba(0, 0, 0, 0.02);
+			backdrop-filter: blur(50px);
+
+			color: #6F7173;
+
+			.popup-close {
+				fill: rgba(111, 113, 115, 1);
+			}
+
+			.field-label, .wrap-radio {
+				color: #6F7173;
+			}
+
+			.wrap-radio input:checked ~ .checkmark {
+				border-color: white;
+			}
+
+			.wrap-radio .checkmark {
+				border-color: #6F7173;
+			}
+			
+			.block-textarea {
+				#flag_message {
+					border: 1px solid rgba(255, 255, 255, 0.05);
+					background: rgba(255, 255, 255, 0.50);
+				}
+			}
+
+			.btn-primary {
+				@media(hover: hover) and (pointer: fine){
+					&:hover{
+						background: #fdb714;
+						color: #fff;
+					}
+				}
+			}
+
 		}
 
 		
@@ -5109,15 +5209,21 @@
 					}
 				}
 			}
-			.reload-wrap {
-
-			}
+			
 		}
 	}
 
 	.col-right {
-		border: 1px solid rgba(56, 56, 56, 0.05);
-		background: linear-gradient(0deg, rgba(244, 244, 244, 0.40) 0%, rgba(244, 244, 244, 0.40) 100%), rgba(255, 255, 255, 0.01);
+
+		.sup-text {
+			color: white
+		}
+	
+
+		.inner-box {
+			border: 1px solid rgba(56, 56, 56, 0.05);
+			background: linear-gradient(0deg, rgba(244, 244, 244, 0.40) 0%, rgba(244, 244, 244, 0.40) 100%), rgba(255, 255, 255, 0.01);
+		}
 
 		.followers-btn {
 			background: rgba(111, 113, 115, 0.05);
@@ -5149,6 +5255,38 @@
 				border: 1px solid rgba(56, 56, 56, 0.05);
 				background: #F7F7F7;
 				backdrop-filter: blur(50px);
+			}
+		}
+
+		select::placeholder {
+			color: white;
+		}
+
+		.row input::placeholder {
+			color: white;
+		}
+		.wrap-input button svg {
+			fill: white;
+		}
+		.select2-selection--single .select2-selection__placeholder {
+			color: white;
+		}
+		.select2-selection__rendered {
+			color: white;
+		}
+		.select2-container--default .select2-selection--single .select2-selection__arrow b:before  {
+			border: solid white;
+			border-width: 0 2px 2px 0;
+		}
+		.wrap-checkbox {
+			color: white;
+		}
+		.btn-primary {
+			@media(hover: hover) and (pointer: fine){
+				&:hover{
+					background-color: #d69b10;
+					color: white;
+				}
 			}
 		}
 
@@ -5273,6 +5411,13 @@
 		
 	}
 
+	// MY PROFILE
+
+	.col-right {
+		border: 1px solid rgba(56, 56, 56, 0.05);
+		background: rgba(244, 244, 244, 0.40);
+	}
+
 
 	// MY FRIENDS
 
@@ -5394,6 +5539,24 @@
 
 		}
 
+		.btn-primary {
+			@media (hover: hover) and (pointer: fine){
+				&:hover {
+					background: #e1a20f;
+					color: white;
+				}
+			}
+		}
+
+		.wrap-checkbox .checkmark {
+			background: white;
+			border: 1px solid #6F7173;
+		}
+
+		.form-group .pass-submit.second .btn-primary {
+			color: white;
+		}
+
 		.tabs-content {
 
 			.inner {
@@ -5501,6 +5664,17 @@
 			@media(hover: hover) and (pointer: fine){
 				&:hover{
 					background: #79828a;
+					
+				}
+			}
+		}
+		.sort-item .btn {
+			// background: #9BA5AE;
+			// color: white;
+
+			@media(hover: hover) and (pointer: fine){
+				&:hover{
+					background: rgb(228 165 16);
 					
 				}
 			}
