@@ -1,4 +1,4 @@
-{{> header pageTitle="Popup Login"}}
+{{> header pageTitle="Index"}}
 
 <div class="section">
 	<div class="headline">
@@ -59,10 +59,30 @@
 	{{> thumbs}}
 
 	{{> pagination}}
+
+  <div class="tab-content report-wrap popup open">
+    <div class="popup-content">
+      <div class="inner-box complaint-popup">
+        <button type="button" class="popup-close">
+          <svg class="svg-icon"><use xlink:href="#icon-close"></use></svg>
+        </button>
+
+        <div class="email-confirmation">
+          <span class="email-confirmation-title">Подтверждение аккаунта</span>
+
+          <p class="email-confirmation-text">Мы отправили вам письмо с ссылкой для активации аккаунта. Проверьте почту и перейдите по ссылке из письма</p>
+
+          <p class="email-confirmation-text">Ссылка действует в течении 15 минут</p>
+
+          <span class="timer email-confirmation-timer">15:00</span>
+
+          <button class="btn-primary">Отправить повторно</button>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>
 
 {{> section-seo}}
-
-{{> popup-login}}
 
 {{> footer}}
