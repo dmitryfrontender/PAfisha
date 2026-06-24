@@ -4633,6 +4633,68 @@
 	font-size: 12px;
 }
 
+.email-confirmation {
+  &-title {
+    color: #FFF;
+    text-align: center;
+    font-family: Raleway;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 24px;
+  }
+
+  &-text {
+    margin-bottom: 24px;
+    text-align: center;
+    color: #B4B4B4;
+    font-variant-numeric: lining-nums proportional-nums;
+    font-size: 12px;
+    font-weight: 500;
+    line-height: 150%;
+  }
+
+  &-timer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #FDB713;
+    text-align: center;
+    font-variant-numeric: lining-nums proportional-nums;
+    font-family: Raleway;
+    font-size: 12px;
+    font-weight: 500;
+    line-height: 150%;
+    margin-bottom: 12px;
+    margin-top: -12px;
+  }
+}
+
+.light-theme {
+  .email-confirmation {
+    &-title {
+      color: #6F7173;
+    }
+
+    &-text {
+      color: #6F7173;
+    }
+
+    &-timer {
+      color: #FD1313;
+    }
+
+    .btn-primary {
+      background: #FFF;
+      color: #9BA5AE;
+    }
+  }
+}
+
 .logo-holder {
   .logo-light {
     display: none;
@@ -4673,7 +4735,7 @@
 	.premium-box {
 		.wrap {
 			background: white !important;
-			
+
 			.glitch-text .top-text {
 				color: #6F7173;
 			}
@@ -4685,7 +4747,7 @@
 			}
 		}
 
-		
+
 	}
 
 	.tags-block {
@@ -4693,7 +4755,7 @@
 			background: linear-gradient(90deg, rgba(255, 171, 2, 0.10) 0%, rgba(255, 255, 255, 0.00) 100%);
 			border: 1px solid linear-gradient(90deg, rgba(255, 171, 2, 0.10) 0%, rgba(255, 255, 255, 0.00) 100%);
 
-			
+
 
 		}
 		.title-letter::after {
@@ -4746,7 +4808,7 @@
 	// SINGLE MODEL PAGE
 
 	.model-block {
-	
+
 		&__title {
 			color: #6F7173;
 
@@ -4868,7 +4930,7 @@
 		.wrap-radio .checkmark {
 			border-color: #6F7173;
 		}
-		
+
 		.block-textarea {
 			#flag_message {
 				border: 1px solid rgba(255, 255, 255, 0.05);
@@ -4886,7 +4948,7 @@
 		}
 	}
 
-	// VIDEO PREMIUM 
+	// VIDEO PREMIUM
 
 	.block-video-premium {
 		.right-column {
@@ -4940,7 +5002,7 @@
 			}
 		}
 
-		
+
 
 
 	}
@@ -5032,7 +5094,7 @@
 			border: 1px solid rgba(255, 255, 255, 0.05);
 			background: #F6F6F6;
 		}
-		
+
 		.pagination-holder .btn {
 			border: 1px solid rgba(56, 56, 56, 0.05);
 			color: #6F7173;
@@ -5156,7 +5218,7 @@
 
 	// USER PROFILE NOT FILE
 
-	// !! CHANGE CARDS IMG 
+	// !! CHANGE CARDS IMG
 	.model-block__subscribe {
 		color: #FDB713;
 	}
@@ -5192,7 +5254,7 @@
 	.chat-list .active {
 		background: #FDB713;
 
-		
+
 
 		.chat-contact {
 
@@ -5207,11 +5269,11 @@
 			}
 
 		}
-		
-			
+
+
 	}
 	.chat-contact {
-	
+
 		&__name {
 			color: #6F7173;
 		}
@@ -5223,7 +5285,7 @@
 			color: #9BA5AE;
 		}
 	}
-	
+
 
 	// PRICE POPUP
 
@@ -5258,7 +5320,7 @@
 			.old-price {
 				color: #9BA5AE;
 			}
-			
+
 		}
 
 		.block-discount .list {
@@ -5269,8 +5331,8 @@
 				color: #6F7173;
 			}
 		}
-		
-		
+
+
 	}
 
 
@@ -5294,7 +5356,7 @@
 				background: #9BA5AE;
 			}
 
-			
+
 		}
 
 		.is-blocked {
@@ -5321,12 +5383,12 @@
 
 		}
 
-		
 
-		
-		
-		
-		
+
+
+
+
+
 	}
 
 
@@ -5371,7 +5433,7 @@
 				background: #9BA5AE;
 				color: white;
 			}
-		
+
 	}
 
 	// SETTINGS
@@ -5407,7 +5469,7 @@
 			.wrap-input input , .select2-container--default .select2-selection--single .select2-selection__rendered, textarea {
 
 				border: 1px solid rgba(56, 56, 56, 0.15);
-				
+
 				// #3D3C40;
 				background: #FFF;
 				color: #6F7173;
@@ -5415,7 +5477,7 @@
 			}
 			.wrap-input input:focus {
 				border: 1px solid #3D3C40;
-				
+
 			}
 		}
 
@@ -5435,7 +5497,7 @@
 				border-bottom: 1px solid #3D3C40;
 			}
 			input::placeholder {
-				color: rgba(155, 165, 174, 1);	
+				color: rgba(155, 165, 174, 1);
 			}
 
 			.list-links .item a {
@@ -5490,7 +5552,7 @@
 				&:hover{
 					background: #9BA5AE;
 					color: white;
-					
+
 				}
 			}
 		}
@@ -5501,12 +5563,12 @@
 			@media(hover: hover) and (pointer: fine){
 				&:hover{
 					background: #79828a;
-					
+
 				}
 			}
 		}
 
-		
+
 	}
 
 	// SEARCH RESULT CATEGORIES
@@ -5522,7 +5584,7 @@
 			@media(hover: hover) and (pointer: fine){
 				&:hover{
 					background: rgba(155, 165, 174, 0.12);
-					
+
 				}
 			}
 
@@ -5584,8 +5646,8 @@
 
 	}
 
-	
-	
+
+
 
 
 	// ------------------------- // ----------------------
@@ -5798,7 +5860,7 @@
 				border-color: #6F7173;
 			}
 		}
-		
+
 
 	}
 
