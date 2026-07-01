@@ -292,6 +292,28 @@
 			}
 		}
 
+		.block-radios.first {
+      .wrap-radio {
+        color: #6F7173;
+
+        .bg {
+          color: #9BA5AE;
+          opacity: .1;
+        }
+
+        .checkmark {
+          border: 1px solid rgba(56, 56, 56, 0.15);
+          background: rgba(255, 255, 255, 0.60);
+        }
+
+        &.decor-wrap {
+          .checkmark {
+            background: #E5E5E5;
+          }
+        }
+      }
+    }
+
 		.block-radios.second .wrap-radio {
 			border: 1px solid rgba(56, 56, 56, 0.15);
 			background: rgba(255, 255, 255, 0.60);
