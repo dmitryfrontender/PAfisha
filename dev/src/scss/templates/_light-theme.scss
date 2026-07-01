@@ -81,7 +81,7 @@
 			color: rgba(253, 183, 19, 0.13);
 		}
 		.title-letter::before{
-			background: linear-gradient(90deg, rgba(255, 171, 2, 0.10) 0%, rgba(255, 255, 255, 0.00) 100%);
+      background: linear-gradient(90deg, rgba(255, 171, 2, 0.10) 0%, rgba(255, 255, 255, 0.00) 100%);
 		}
 
 		.link {
@@ -94,12 +94,7 @@
 					border: 1px solid rgba(111, 113, 115, 0.1);
 				}
 			}
-
 		}
-		// .title-letter {
-		// 	border: 1px solid #383838;
-		// 	background: linear-gradient(90deg, rgba(255, 171, 2, 0.10) 0%, rgba(255, 255, 255, 0.00) 100%);
-		// }
 	}
 
 	.login {
@@ -434,6 +429,14 @@
 		.banner-filter {
 			border: 1px solid rgba(255, 255, 255, 0.05);
 			background: #F6F6F6;
+
+      .circle-decor {
+        background: linear-gradient(200deg, #FFE3A6 13.43%, rgba(255, 227, 166, 0.00) 87.86%);
+
+        &::after {
+          background: linear-gradient(197deg, #FFE3A6 0, rgba(255, 227, 166, .3) 10%);
+        }
+      }
 		}
 
 		.pagination-holder .btn {
