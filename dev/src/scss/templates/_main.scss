@@ -2042,6 +2042,164 @@
 	}
 }
 
+.block-confirmation {
+  text-align: left;
+
+  .subscription-card {
+    display: flex;
+    padding: 24px;
+    justify-content: space-between;
+    align-items: center;
+    align-self: stretch;
+    border-radius: 18px;
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    background: rgba(61, 60, 64, 0.50);
+  }
+
+  .subscription-card__back {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 48px;
+    height: 48px;
+    padding: 0;
+    border: 0;
+    background: transparent;
+    color: rgba(#fff, .6);
+    cursor: pointer;
+    transition: .2s;
+
+    &:hover {
+      color: #fff;
+    }
+
+    svg {
+      display: block;
+      width: 24px;
+      height: 24px;
+    }
+  }
+
+  .subscription-card__info {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    gap: 6px;
+  }
+
+  .subscription-card__title {
+    color: #FFF;
+    leading-trim: both;
+    text-edge: cap;
+    font-variant-numeric: lining-nums proportional-nums;
+    font-size: 20px;
+    font-weight: 800;
+    line-height: 140%;
+  }
+
+  .subscription-card__period {
+    color: #B4B4B4;
+    leading-trim: both;
+    text-edge: cap;
+    font-variant-numeric: lining-nums proportional-nums;
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 140%;
+  }
+
+  .subscription-card__total {
+    color: #FFF;
+    leading-trim: both;
+    text-edge: cap;
+    font-variant-numeric: lining-nums proportional-nums;
+    font-family: Raleway;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 140%;
+
+    strong {
+      color: #FFF;
+      leading-trim: both;
+      text-edge: cap;
+      font-variant-numeric: lining-nums proportional-nums;
+      font-size: 18px;
+      font-weight: 600;
+      line-height: 140%;
+      text-decoration-line: line-through;
+    }
+  }
+
+  form {
+    display: flex;
+    width: 600px;
+    padding: 36px 24px 24px 24px;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 24px;
+    border-radius: 40px;
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    background: rgba(28, 28, 32, 0.50);
+    backdrop-filter: blur(15px);
+  }
+
+  .button-group {
+    width: 100%;
+
+    .row {
+      margin-bottom: 8px;
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+  }
+
+  .wrap-radio {
+    width: 100%;
+    border-radius: 18px;
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    background: rgba(61, 60, 64, 0.50);
+    padding: 24px;
+    height: auto;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    color: #FFF;
+
+      @media(max-width: 550px){
+        padding: 10px 24px;
+      }
+
+      .icon {
+        flex-shrink: 0;
+        margin-right: 8px;
+      }
+
+      .tg {
+        font-size: 22px;
+        color: #FFC300;
+      }
+  }
+
+  .checkmark {
+    left: auto;
+    right: 24px;
+    top: 50%;
+    transform: translate3d(0, -50%, 0);
+  }
+
+  .btn-primary {
+    width: 100%;
+  }
+
+  .block {
+    width: 100%;
+    text-align: center;
+  }
+}
+
 .premium-top-text {
 	color: #fff;
 	font-size: 20px;
@@ -2201,7 +2359,7 @@
 		.checkmark {
 			height: 100%;
 			width: 100%;
-			border-radius: 18px;
+			border-radius: 40px;
 			border: 1px solid rgba(255, 255, 255, 0.15);
 			background: rgba(61, 60, 64, 0.50);
 			padding: 0;
@@ -2217,7 +2375,7 @@
 				transform: translate3d(0, 0, 0);
 				background: none;
 				border: 2px solid #FDB713;
-				border-radius: 16px;
+				border-radius: 40px;
 			}
 		}
 
